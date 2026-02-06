@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-// import rotate from "./rotate/page";
 
 export default function HomePage() {
   const router = useRouter();

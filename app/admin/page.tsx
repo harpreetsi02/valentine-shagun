@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../config/api";
 
 export default function AdminPage() {
   const [requests, setRequests] = useState<any[]>([]);
@@ -7,7 +8,7 @@ export default function AdminPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:8081/api/admin/requests");
+      const res = await fetch(`${API_BASE_URL}/api/admin/requests`);
       const data = await res.json();
       setRequests(data);
     };
@@ -17,7 +18,7 @@ export default function AdminPage() {
     const interval = setInterval(fetchData, 3000); // 🔁 every 3 sec
 
     return () => clearInterval(interval);
-  }, []);http://localhost:3003/login/whatsapp
+  }, []);
 
   return (
     <div className="p-10 font-serif">
@@ -50,7 +51,7 @@ export default function AdminPage() {
             <>
               <button
                 onClick={() =>
-                  fetch(`http://localhost:8081/api/admin/approve/${r.id}`, {
+                  fetch(`${API_BASE_URL}/api/admin/approve/${r.id}`, {
                     method: "POST",
                   })
                 }
@@ -61,7 +62,7 @@ export default function AdminPage() {
 
               <button
                 onClick={() =>
-                  fetch(`http://localhost:8081/api/admin/reject/${r.id}`, {
+                  fetch(`${API_BASE_URL}/api/admin/reject/${r.id}`, {
                     method: "POST",
                   })
                 }
@@ -79,7 +80,7 @@ export default function AdminPage() {
                           
               <button
                 onClick={() =>
-                  fetch(`http://localhost:8081/api/admin/message/${r.id}`, {
+                  fetch(`${API_BASE_URL}/api/admin/message/${r.id}`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ adminMessage: adminMsg })
