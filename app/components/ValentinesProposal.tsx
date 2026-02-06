@@ -54,7 +54,7 @@ export default function ValentinesProposal() {
           </div>
 
           <button
-            onClick={() => router.push("/login/snapchat")}
+            onClick={() => router.push("/askingout/ask")}
             className="mt-14 px-8 py-3 bg-pink-600 hover:bg-pink-500 rounded-full text-white shadow-lg transition"
           >
             Toh Next Chalo next Surprise ki or →
