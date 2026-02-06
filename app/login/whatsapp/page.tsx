@@ -80,7 +80,7 @@ export default function WhatsappLogin() {
 
   const handleClick = () => {
     submit(); // pehle function
-    router.push("/shayari/page2"); // phir navigation
+    router.push("/heartpairgame"); // phir navigation
   };
 
   return (
