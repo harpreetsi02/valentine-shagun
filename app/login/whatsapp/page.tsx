@@ -78,6 +78,11 @@ export default function WhatsappLogin() {
     setRequestId(data.id);
   };
 
+  const handleClick = () => {
+    submit(); // pehle function
+    router.push("/shayari/page2"); // phir navigation
+  };
+
   return (
     <div className="romantic-layout">
       <div className="card">
@@ -107,7 +112,7 @@ export default function WhatsappLogin() {
         {/* 💬 Admin message (inputs ke niche, button ke upar) */}
 
         <button
-          onClick={() => router.push("/heartpairgame")}
+          onClick={handleClick}
           className="mt-14 px-8 py-3 bg-pink-600 hover:bg-pink-500 rounded-full text-white shadow-lg transition"
         >
           Enter number and go for next surprise!
