@@ -22,13 +22,13 @@ export default function ShayariPage1() {
 
         <p>
           Bas hasdi reha kr tu... <br />
-          Das ki kimmat tere hassan lai...! <br />
+          Das ki kimmat tere hassan lai(ke liye)...! <br />
           <br />
           Har gall mainu dasiya kr tu... <br />
-          Bahuta sochiya na kr kujh dasan lai...! <br />
+          Bahuta sochiya na kr kujh dasan(batane) lai...! <br />
           <br />
-          Har waqt tension naa liya kr sajna... <br />
-          Mai hega teri tension chakan lai...!
+          Har waqt tension naa liya kr sajna... <br />a
+          Mai hega teri tension chakan(uthane) lai...!
         </p>
 
         <p className="mt-6 text-right text-sm text-gray-400">- Harpreet</p>
