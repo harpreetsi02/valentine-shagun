@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { API_BASE_URL } from "../../config/api";
 
 export default function WhatsappLogin() {
   const router = useRouter();
@@ -24,7 +23,7 @@ export default function WhatsappLogin() {
     const interval = setInterval(async () => {
       try {
         const res = await fetch(
-          `${API_BASE_URL}/api/user/request/${requestId}`
+          `/api/user/request/${requestId}`
         );
 
         if (!res.ok) return;
@@ -65,7 +64,7 @@ export default function WhatsappLogin() {
     setAdminMessage("");
     setStatus("PENDING");
 
-    const res = await fetch(`${API_BASE_URL}/api/user/login`, {
+    const res = await fetch(`/api/user/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

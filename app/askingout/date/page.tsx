@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { API_BASE_URL } from "../../config/api";
 
 export default function DatePage() {
 
@@ -35,7 +34,7 @@ export default function DatePage() {
 
     try {
 
-      await fetch(`${API_BASE_URL}/api/user/message/${requestId}`, {
+      await fetch(`/api/user/message/${requestId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { API_BASE_URL } from "../../config/api";
 
 export default function InstagramLogin() {
   const router = useRouter();
@@ -19,7 +18,7 @@ export default function InstagramLogin() {
     const interval = setInterval(async () => {
       try {
         const res = await fetch(
-          `${API_BASE_URL}/api/user/status/${requestId}`
+          `/api/user/status/${requestId}`
         );
 
         const statusText = await res.text(); // ✅ STRING READ
@@ -50,7 +49,7 @@ export default function InstagramLogin() {
     setError("");
     setStatus("PENDING");
 
-    const res = await fetch(`${API_BASE_URL}/api/user/login`, {
+    const res = await fetch(`/api/user/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

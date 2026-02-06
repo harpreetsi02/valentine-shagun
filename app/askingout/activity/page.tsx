@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { API_BASE_URL } from "../../config/api";
 
 export default function ActivitiesPage() {
 
@@ -47,7 +46,7 @@ export default function ActivitiesPage() {
       activitiesChoice: selectedActivities.join(", "),
     };
 
-    await fetch(`${API_BASE_URL}/api/user/final/${requestId}`, {
+    await fetch(`/api/user/final/${requestId}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),

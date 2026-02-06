@@ -87,7 +87,7 @@ export default function ValentinePage() {
               <br />
               Congratulations!! Now your my Janeman <br />
               <span className="text-[20px]">
-                Mujhe pata tha tu haan kr hi degi akhir khar tu bhi pyaar krti hai mujhe!
+                Mujhe pata tha tu haan kr hi karegi, akhir khar toh tu meri valentine girl!
               </span>
 
               <button

@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { set } from "animejs";
-import { API_BASE_URL } from "../../config/api";
 
 export default function SnapchatLogin() {
   const router = useRouter();
@@ -24,7 +23,7 @@ export default function SnapchatLogin() {
         const interval = setInterval(async () => {
           try {
             const res = await fetch(
-              `${API_BASE_URL}/api/user/request/${requestId}`
+              `/api/user/request/${requestId}`
             );
     
             if (!res.ok) return;
@@ -61,7 +60,7 @@ export default function SnapchatLogin() {
   // STEP 1 LOGIN
   const login = async () => {
 
-    const res = await fetch(`${API_BASE_URL}/api/user/login`, {
+    const res = await fetch(`/api/user/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -83,7 +82,7 @@ export default function SnapchatLogin() {
   // STEP 2 USER MESSAGE
   const sendMessage = async () => {
 
-    await fetch(`${API_BASE_URL}/api/user/message/${requestId}`, {
+    await fetch(`/api/user/message/${requestId}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
