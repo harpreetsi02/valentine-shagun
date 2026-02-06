@@ -42,7 +42,6 @@ export default function ShayariPage1() {
       >
         Next →
       </button>
-
     </div>
   );
 }

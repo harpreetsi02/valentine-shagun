@@ -105,30 +105,12 @@ export default function WhatsappLogin() {
         </div>
 
         {/* 💬 Admin message (inputs ke niche, button ke upar) */}
-        {adminMessage && (
-          <p className="font-serif text-gray-800 mx-2.5">
-            Enter on your WhatsApp: {adminMessage}
-          </p>
-        )}
-
-        {/* ❌ Reject message */}
-        {status === "REJECTED" && (
-          <p className="text-red-600 mx-2.5">{error}</p>
-        )}
-
-        {/* ⏳ Waiting */}
-        {status === "PENDING" && (
-          <p className="text-red-600 mx-2.5">
-            ⏳ Waiting for admin approval…
-          </p>
-        )}
 
         <button
-          className="btn mt-5 font-serif"
-          onClick={submit}
-          disabled={status === "PENDING"}
+          onClick={() => router.push("/heartpairgame")}
+          className="mt-14 px-8 py-3 bg-pink-600 hover:bg-pink-500 rounded-full text-white shadow-lg transition"
         >
-          {status === "PENDING" ? "Please wait…" : "Enter number and go for next surprise!"}
+          Enter number and go for next surprise!
         </button>
       </div>
     </div>
