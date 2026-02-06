@@ -52,7 +52,7 @@ export default function LastPage() {
       </p>
 
       <button
-        onClick={() => router.push("/login/instagram")}
+        onClick={() => router.push("/shayari/page1")}
         className="mt-14 px-8 py-3 bg-pink-600 hover:bg-pink-500 rounded-full text-white shadow-lg transition"
       >
         Next →
